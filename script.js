@@ -1,17 +1,16 @@
 // Randomly return either 'Rock', 'Paper' or 'Scissors' string with getComputerChoice function
 function getComputerChoice() {
     let rand = Math.floor(Math.random() * 4);
-    console.log(rand);
-/** 
+
     if (rand == 1) {
-        console.log ("Rock");
+        return "Rock";
     }else if (rand == 2){
-        console.log ("Paper");
+        return "Paper";
     }else{
-        console.log ("Scissors");
+        return "Scissors";
     }
-    **/
 }
+
 
 //Ask user for an input: Rock, Paper or Scissors
 //IF user wins, display string: "You win! <Smth> beats <smth>

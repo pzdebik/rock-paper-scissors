@@ -11,12 +11,13 @@ function getComputerChoice() {
     }
 }
 
+
 function playRound(playerSelection, computerSelection) {
     //IF user wins, display string: "You win! <Smth> beats <smth>
     //ELSE, display string: "You lose! <Smth> beats <smth>"
     if (playerSelection === computerSelection) {
         console.log(`Draw! ${playerSelection} and ${computerSelection}.`)
-    }else if (playerSelection === "Rock" && computerSelection === "Paper") {
+    }else if (playerSelection === "rock" && computerSelection === "Paper") {
         console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
     }else if (playerSelection === "Rock" && computerSelection === "Scissors") {
         console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
@@ -34,10 +35,19 @@ function playRound(playerSelection, computerSelection) {
 }
 
 //Ask user for an input: Rock, Paper or Scissors
+//Make playerSelection parameter case insensitive
+
+function getPlayerChoice() {
+    let askPlayer = prompt("Choose your weapon:", "");
+    let toLower = askPlayer.toLowerCase();
+    let toUpper = askPlayer.toUpperCase();
+    let firstLetter = toUpper.charAt(0);
+    let part = toLower.substring(1);
+    return firstLetter + part;
+}
+
 //Pass getComputerChoice(), and user input to function playRound, which evaluates who wins
-playRound(prompt("Choose your weapon:", ""), getComputerChoice());
+playRound(getPlayerChoice(), getComputerChoice());
 
-
-
-//Loop for 5 rounds and display each win
+//Loop for 5 rounds and display current status
 

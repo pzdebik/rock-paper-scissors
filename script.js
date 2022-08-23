@@ -61,13 +61,16 @@ function game() {
     let computerPoints = 0;
 
     for (let i = 0; i < 5; i++) {
-        playRound(getPlayerChoice(), getComputerChoice());
+        let result = playRound(getPlayerChoice(), getComputerChoice());
 
-        if (playRound === "Lose"){
+        if (result === "Lose"){
             computerPoints += 1;
-        }else if (playRound === "Win") {
+        }else if (result === "Win") {
             playerPoints += 1;
-        } 
+        }else if (result === "Draw") {
+            playerPoints += 0;
+            computerPoints += 0;
+        }
     }
 
     console.log("You: " + playerPoints);

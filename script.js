@@ -85,3 +85,28 @@ function game() {
     }
 }
 
+const body = document.querySelector('body');
+
+//const container = document.querySelector('#container');
+const container = document.createElement('div');
+container.setAttribute('id','container');
+
+body.appendChild(container);
+
+const paperButton = document.createElement('button');
+paperButton.classList.add('paper');
+paperButton.textContent = 'Paper';
+const scissorsButton = document.createElement('button');
+scissorsButton.classList.add('scissors');
+scissorsButton.textContent = 'Scissors';
+const rockButton = document.createElement('button');
+rockButton.classList.add('rock');
+rockButton.textContent = 'Rock';
+
+container.appendChild(paperButton);
+container.appendChild(scissorsButton);
+container.appendChild(rockButton);
+
+
+
+

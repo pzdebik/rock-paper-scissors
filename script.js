@@ -11,7 +11,6 @@ function getComputerChoice() {
     }
 }
 
-
 function playRound(playerSelection, computerSelection) {
     //IF user wins, display string: "You win! <Smth> beats <smth>
     //ELSE, display string: "You lose! <Smth> beats <smth>"
@@ -84,7 +83,7 @@ function game() {
         console.log("Draw!");
     }
 }
-
+/*
 const body = document.querySelector('body');
 
 //const container = document.querySelector('#container');
@@ -106,7 +105,7 @@ rockButton.textContent = 'Rock';
 container.appendChild(paperButton);
 container.appendChild(scissorsButton);
 container.appendChild(rockButton);
-
+*/
 
 
 

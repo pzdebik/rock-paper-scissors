@@ -1,12 +1,17 @@
+let playerScore = 0;
+let computerScore = 0;
+
+const buttons = document.querySelectorAll('input');
+
 // Randomly return either 'Rock', 'Paper' or 'Scissors' string with getComputerChoice function
 function getComputerChoice() {
     let choices = ['rock', 'paper', 'scissors'];
     console.log(choices[Math.floor(Math.random() * choices.length)]);
 }
 
+//IF user wins, display string: "You win! <Smth> beats <smth>
+//ELSE, display string: "You lose! <Smth> beats <smth>"
 function playRound(playerSelection, computerSelection) {
-    //IF user wins, display string: "You win! <Smth> beats <smth>
-    //ELSE, display string: "You lose! <Smth> beats <smth>"
     if (playerSelection === computerSelection) {
         console.log(`Draw! ${playerSelection} and ${computerSelection}.`)
         return "Draw";

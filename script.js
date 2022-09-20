@@ -2,6 +2,8 @@ let playerScore = 0;
 let computerScore = 0;
 
 const buttons = document.querySelectorAll('input');
+const body = document.querySelector('body');
+const container = document.querySelector('#container');
 
 // Randomly return either 'Rock', 'Paper' or 'Scissors' string with getComputerChoice function
 function getComputerChoice() {
@@ -24,8 +26,8 @@ function playRound(playerSelection, computerSelection) {
             + "<br>Computer score: " + computerScore;
 
         if (playerScore == 5){
-            result += "<br>You won the game! Refresh the page to start again.";
-            // add disable buttons func
+            result = "<br><br>You won the game! Refresh the page to start again.";
+            body.removeChild(container);
         }
     } else if (playerSelection == computerSelection) {
         result = "It's a draw! You both chose " + playerSelection + "."
@@ -38,8 +40,8 @@ function playRound(playerSelection, computerSelection) {
         + "<br>Computer score: " + computerScore;
 
         if (computerScore == 5) {
-            result += "<br><br>Computer won the game! Refresh the page to start again.";
-            // add disable buttons func
+            result = "<br><br>Computer won the game! Refresh the page to start again.";
+            body.removeChild(container);
         }
     }
 

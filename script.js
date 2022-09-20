@@ -43,9 +43,16 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 
+    //Shows the result on page, in div#result
     document.getElementById('result').innerHTML = result;
     return;
 }
+
+buttons.forEach(button => {
+    button.addEventListener('click', ()=> {
+        playRound(button.value, getComputerChoice());
+    });
+});
 
 
 

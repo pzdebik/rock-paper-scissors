@@ -20,7 +20,7 @@ function playRound(playerSelection, computerSelection) {
 
         playerScore += 1;
         result = "You win! " + playerSelection + " beats " + computerSelection + "."
-            + "<br><br>Player score: " + playerScore +
+            + "<br><br>Player score: " + playerScore
             + "<br>Computer score: " + computerScore;
 
         if (playerScore == 5){

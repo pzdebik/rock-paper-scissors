@@ -19,26 +19,26 @@ function playRound(playerSelection, computerSelection) {
        (playerSelection == 'scissors' && computerSelection == 'paper')) {
 
         playerScore += 1;
-        result = ("You win!" + playerSelection + " beats " + computerSelection + ".\n\n"
-            + "Player score: " + playerScore + "\n"
-            + "Computer score: " + computerScore);
+        result = "You win! " + playerSelection + " beats " + computerSelection + "."
+            + "<br><br>Player score: " + playerScore +
+            + "<br>Computer score: " + computerScore;
 
         if (playerScore == 5){
-            result += "\n\nYou won the game! Refresh the page to start again.";
+            result += "<br>You won the game! Refresh the page to start again.";
             //disable buttons
         }
     } else if (playerSelection == computerSelection) {
-        result = ("It's a draw! You both chose " + playerSelection + ".\n\n"
-            + "Player score: " + playerScore + "\n"
-            + "Computer score: " + computerScore);
+        result = "It's a draw! You both chose " + playerSelection + "."
+            + "<br><br>Player score: " + playerScore
+            + "<br>Computer score: " + computerScore;
     } else {
         computerScore += 1;
-        result = ("You lose!" + computerSelection + " beats " + playerSelection + ".\n\n"
-        + "Player score: " + playerScore + "\n"
-        + "Computer score: " + computerScore);
+        result = "You lose! " + computerSelection + " beats " + playerSelection + "."
+        + "<br><br>Player score: " + playerScore 
+        + "<br>Computer score: " + computerScore;
 
         if (computerScore == 5) {
-            result += "\n\nComputer won the game! Refresh the page to start again.";
+            result += "<br><br>Computer won the game! Refresh the page to start again.";
             //disable buttons
         }
     }
@@ -48,11 +48,12 @@ function playRound(playerSelection, computerSelection) {
     return;
 }
 
-buttons.forEach(button => {
-    button.addEventListener('click', ()=> {
+buttons.forEach(button =>{
+    button.addEventListener('click', function(){
         playRound(button.value, getComputerChoice());
     });
 });
+
 
 
 

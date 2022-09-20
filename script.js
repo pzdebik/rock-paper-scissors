@@ -6,7 +6,7 @@ const buttons = document.querySelectorAll('input');
 // Randomly return either 'Rock', 'Paper' or 'Scissors' string with getComputerChoice function
 function getComputerChoice() {
     let choices = ['rock', 'paper', 'scissors'];
-    console.log(choices[Math.floor(Math.random() * choices.length)]);
+    return (choices[Math.floor(Math.random() * choices.length)]);
 }
 
 //IF user wins, display string: "You win! <Smth> beats <smth>
@@ -25,7 +25,7 @@ function playRound(playerSelection, computerSelection) {
 
         if (playerScore == 5){
             result += "<br>You won the game! Refresh the page to start again.";
-            //disable buttons
+            // add disable buttons func
         }
     } else if (playerSelection == computerSelection) {
         result = "It's a draw! You both chose " + playerSelection + "."
@@ -39,7 +39,7 @@ function playRound(playerSelection, computerSelection) {
 
         if (computerScore == 5) {
             result += "<br><br>Computer won the game! Refresh the page to start again.";
-            //disable buttons
+            // add disable buttons func
         }
     }
 

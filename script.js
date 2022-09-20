@@ -12,30 +12,39 @@ function getComputerChoice() {
 //IF user wins, display string: "You win! <Smth> beats <smth>
 //ELSE, display string: "You lose! <Smth> beats <smth>"
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        console.log(`Draw! ${playerSelection} and ${computerSelection}.`)
-        return "Draw";
-    }else if (playerSelection === "Rock" && computerSelection === "Paper") {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
-        return "Lose";
-    }else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
-        return "Win";
-    }else if (playerSelection === "Paper" && computerSelection === "Rock") {
-        console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
-        return "Win";
-    }else if (playerSelection === "Paper" && computerSelection === "Scissors") {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
-        return "Lose";
-    }else if (playerSelection === "Scissors" && computerSelection === "Rock") {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}.`)
-        return "Lose";
-    }else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-        console.log(`You win! ${playerSelection} beats ${computerSelection}.`)
-        return "Win";
-    }else {
-        console.log("Invalid weapon");
+    let result = "";
+
+    if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
+       (playerSelection == 'paper' && computerSelection == 'rock') ||
+       (playerSelection == 'scissors' && computerSelection == 'paper')) {
+
+        playerScore += 1;
+        result = ("You win!" + playerSelection + " beats " + computerSelection + ".\n\n"
+            + "Player score: " + playerScore + "\n"
+            + "Computer score: " + computerScore);
+
+        if (playerScore == 5){
+            result += "\n\nYou won the game! Refresh the page to start again.";
+            //disable buttons
+        }
+    } else if (playerSelection == computerSelection) {
+        result = ("It's a draw! You both chose " + playerSelection + ".\n\n"
+            + "Player score: " + playerScore + "\n"
+            + "Computer score: " + computerScore);
+    } else {
+        computerScore += 1;
+        result = ("You lose!" + computerSelection + " beats " + playerSelection + ".\n\n"
+        + "Player score: " + playerScore + "\n"
+        + "Computer score: " + computerScore);
+
+        if (computerScore == 5) {
+            result += "\n\nComputer won the game! Refresh the page to start again.";
+            //disable buttons
+        }
     }
+
+    document.getElementById('result').innerHTML = result;
+    return;
 }
 
 
